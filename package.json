@@ -1,0 +1,19 @@
+{
+  "name": "p335-transcode_video",
+  "version": "1.0.0",
+  "description": "第３章から開発していく24-Hour Video",
+  "main": "index.js",
+  "scripts": {
+    "test": "run-local-lambda --file index.js --event tests/event.json",
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:ap-northeast-1:567403292509:function:p335-transcode-video --zip-file fileb://Lambda-Deployment.zip",
+    "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
+  },
+  "dependencies": {
+    "aws-sdk": "latest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "run-local-lambda": "^1.1.1"
+  }
+}
